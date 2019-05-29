@@ -34,10 +34,10 @@ int main(int argc, char ** argv){
 
 	int idx = 0;
 	for(auto &i : topics){
-		string cmd = "nohup python3 sub.py";
-		cmd += i;
-		cmd += " > log_sub_" + i + ".log &";
-		std::cout << cmd << std::endl;
+		string cmd = "nohup python3 sub.py %s > log_sub_%s.log &";
+		printf(cmd.c_str(), i.c_str(), i.c_str());
+		printf("\n");
+		execute_cmd(cmd.c_str(), i.c_str(), i.c_str());
 	}
 }
 
