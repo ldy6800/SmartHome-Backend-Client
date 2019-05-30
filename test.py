@@ -14,7 +14,10 @@ client.connect(broker, port)
 
 try:
 	while True:
-		client.publish("house/battery/solar/smartHome/5", "1.0 13 1")
-		time.sleep(3)
+		client.publish("house/battery/solar/smartHome", "1.0 13 1")
+		client.publish("house/battery/external/smartHome", "1.0 13 1")
+		client.publish("house/device/smartHome/1", "1.0 13 1")		
+		client.publish("house/solar/smartHome", "1.0 13 1")
+		time.sleep(1)
 except KeyboardInterrupt:
 	print("EXIT")
